@@ -1,0 +1,19 @@
+const int yak ='1';
+const int son ='0';
+void setup() {
+  pinMode(4,OUTPUT);
+  Serial.begin(115200);
+}
+
+void loop() {
+  if(Serial.read() == yak){
+    digitalWrite(4,LOW);
+    Serial.println("yandı");
+    delay(1);
+  }
+  if(Serial.read()==son){
+    digitalWrite(4,HIGH);
+    Serial.println("söndü");
+    delay(1);
+}
+}
