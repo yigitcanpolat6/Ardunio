@@ -1,0 +1,28 @@
+int echo = 13;
+int tg = 12;
+long sure=0;
+long mesafe=0;
+
+
+void setup() {
+  //  your setup code here, to run once:
+   pinMode(tg,OUTPUT);
+  pinMode(echo, INPUT);
+  Serial.begin(9600);
+
+}
+
+void loop() {
+  digitalWrite(tg,LOW);
+  delayMicroseconds(5);
+  digitalWrite(tg,HIGH);
+  delayMicroseconds(10);
+  digitalWrite(tg,LOW);
+  sure = pulseIn(echo, HIGH); //Ses dalgasının gidip gelme süresini ölçüyoruz.
+  mesafe = sure * 0.0345 / 2;
+  Serial.print("mesafe : " );
+  Serial.println(mesafe);
+  delay(200);
+
+
+}
